@@ -14,6 +14,11 @@ type Gateway struct {
 	registry discovery.Registry
 }
 
+// PutRating implements movie.ratingGateway.
+func (*Gateway) PutRating(ctx context.Context, recordID model.RecordID, recordType model.RecordType, rating *model.Rating) error {
+	panic("unimplemented")
+}
+
 // New creates a new gRPC gateway for a rating service.
 func New(registry discovery.Registry) *Gateway {
 	return &Gateway{registry}
