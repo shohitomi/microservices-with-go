@@ -39,7 +39,7 @@ func main() {
 	}
 	ctx := context.Background()
 	instanceID := discovery.GenerateInstanceID(serviceName)
-	if err := registry.Register(ctx, instanceID, serviceName, fmt.Sprintf("localhost:%d", cfg.APIConfig.Port)); err != nil {
+	if err := registry.Register(ctx, instanceID, serviceName, fmt.Sprintf("localhost:%v", cfg.APIConfig.Port)); err != nil {
 		panic(err)
 	}
 	go func() {
@@ -55,7 +55,7 @@ func main() {
 	ratingGateway := ratinggateway.New(registry)
 	ctrl := movie.New(ratingGateway, metadataGateway)
 	h := grpchandler.New(ctrl)
-	lis, err := net.Listen("tcp", fmt.Sprintf("localhost:%d", cfg.APIConfig.Port))
+	lis, err := net.Listen("tcp", fmt.Sprintf("localhost:%v", cfg.APIConfig.Port))
 	if err != nil {
 		log.Fatalf("failed to listen: %v", err)
 	}
