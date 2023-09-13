@@ -4,6 +4,7 @@ go 1.20
 
 require (
 	github.com/confluentinc/confluent-kafka-go v1.9.2
+	github.com/go-sql-driver/mysql v1.7.1
 	github.com/hashicorp/consul/api v1.24.0
 	google.golang.org/grpc v1.58.0
 	google.golang.org/protobuf v1.31.0
