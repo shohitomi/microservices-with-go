@@ -19,3 +19,8 @@
 
 # Go workspace file
 go.work
+
+# Build file
+metadata/main
+movie/main
+rating/main
