@@ -11,7 +11,7 @@ import (
 
 // Ingester defines a Kafka ingester.
 type Ingester struct {
-	consumer kafka.Consumer
+	consumer *kafka.Consumer
 	topic    string
 }
 
